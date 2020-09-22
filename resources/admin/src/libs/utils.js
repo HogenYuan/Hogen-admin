@@ -1,3 +1,6 @@
+/**
+ * 原版
+ */
 import _trim from 'lodash/trim'
 import ParentView from '@c/ParentView'
 import Layout from '@c/Layout'
