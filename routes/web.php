@@ -1,5 +1,7 @@
 <?php
 
+use App\Admin\Controllers as C;
+use App\Admin\Models\Config;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
     return view('welcome');
 });
+Route::get('test1', [C\ConfigController::class, 'test1']);

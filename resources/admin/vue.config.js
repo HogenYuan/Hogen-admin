@@ -14,6 +14,16 @@ module.exports = {
   outputDir: pathResolve(publicFolder, adminFolder),
   publicPath: '/' + adminFolder,
   lintOnSave: false,
+  devServer: {
+    port: process.env.PORT,
+    proxy: {
+      '/admin-api': {
+        target: process.env.API_URL,
+        changeOrigin: true,
+        pathRewrite: {},
+      },
+    },
+  },
   configureWebpack: {
     entry: pathResolve(rootDir, 'main.js'),
     plugins: [

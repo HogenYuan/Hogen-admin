@@ -3,12 +3,12 @@
 namespace App\Admin\Controllers;
 
 use App\Admin\Filters\ConfigFilter;
-use App\Admin\Requests\UpdateConfigValuesRequest;
-use App\Admin\Requests\ConfigRequest;
-use App\Admin\Resources\ConfigResource;
 use App\Admin\Models\Config;
 use App\Admin\Models\ConfigCategory;
 use App\Admin\Models\VueRouter;
+use App\Admin\Requests\ConfigRequest;
+use App\Admin\Requests\UpdateConfigValuesRequest;
+use App\Admin\Resources\ConfigResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
@@ -30,6 +30,21 @@ class ConfigController extends Controller
         return $this->ok(ConfigResource::make($config)->additional($this->formData()));
     }
 
+    /**
+     * 添加和编辑表单所需数据
+     *
+     * @return array
+     */
+    protected function formData()
+    {
+        return [
+            'types_map'  => Config::$typeMap,
+            'categories' => ConfigCategory::query()
+                ->orderByDesc('id')
+                ->get(),
+        ];
+    }
+
     public function update(ConfigRequest $request, Config $config)
     {
         $inputs = $request->validated();
@@ -46,21 +61,6 @@ class ConfigController extends Controller
             ->paginate();
 
         return $this->ok(ConfigResource::collection($configs));
-    }
-
-    /**
-     * 添加和编辑表单所需数据
-     *
-     * @return array
-     */
-    protected function formData()
-    {
-        return [
-            'types_map' => Config::$typeMap,
-            'categories' => ConfigCategory::query()
-                ->orderByDesc('id')
-                ->get(),
-        ];
     }
 
     public function create()
@@ -89,12 +89,17 @@ class ConfigController extends Controller
 
     public function getValuesByCategorySlug(string $categorySlug)
     {
-        return $this->ok(config(Config::CONFIG_KEY.'.'.$categorySlug), []);
+        return $this->ok(config(Config::CONFIG_KEY . '.' . $categorySlug), []);
     }
 
     public function cache()
     {
         Artisan::call('admin:cache-config');
         return $this->noContent();
+    }
+
+    public function test1()
+    {
+
     }
 }
