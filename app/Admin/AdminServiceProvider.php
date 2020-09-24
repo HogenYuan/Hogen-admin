@@ -10,7 +10,7 @@ class AdminServiceProvider extends ServiceProvider
 {
     protected $middlewareMap = [
         'admin.permission' => \App\Admin\Middleware\AdminPermission::class,
-        'admin.auth' => \App\Admin\Middleware\Authenticate::class,
+        'admin.auth'       => \App\Admin\Middleware\Authenticate::class,
     ];
 
     protected $middlewareGroups = [
@@ -25,7 +25,7 @@ class AdminServiceProvider extends ServiceProvider
 
     protected $commands = [
         Console\Commands\AdminInitCommand::class,
-        Console\Commands\ResourceMakeCommand::class,
+        Console\Commands\Generator\MakeResource::class,
         Console\Commands\CacheConfig::class,
     ];
 

@@ -1,0 +1,98 @@
+<?php
+
+namespace DummyNamespace;
+
+use NamespacedDummyModel;
+use NamespacedDummyRequest;
+use NamespacedDummyResource;
+use NamespacedDummyService;
+use App\Http\Resources\AdminApi\EmptyResource;
+use App\Http\Controllers\DummyPrefixBaseController;
+
+/**
+ * 方法
+ *
+ * Class DummyClass
+ *
+ * @package DummyNamespace
+ */
+class DummyClass extends BaseController
+{
+    /**
+     * 列表
+     *
+     * @param \NamespacedDummyRequest $request
+     *
+     * @return \NamespacedDummyResource[]
+     */
+    public function index(DummyRequest $request){
+        $validated = $request->validated();
+        $dummyModels = DummyModel::query()
+            ->filter($validated)
+            ->orderByDesc('id')
+            ->paginate();
+        return DummyResource::collection($dummyModels);
+    }
+
+    /**
+     * 详情
+     *
+     * @param int $id
+     *
+     * @return \NamespacedDummyResource
+     */
+    public function show(int $id)
+    {
+        $dummyModel = DummyModel::where('id', $id)->firstOrFail();
+        return new DummyResource($dummyModel);
+    }
+
+    /**
+     * 创建
+     *
+     * @param \NamespacedDummyRequest $request
+     *
+     * @return \NamespacedDummyResource
+     * @throws \Urland\Exceptions\Client\BadRequestException
+     */
+    public function store(DummyRequest $request)
+    {
+        $inputs   = $request->validated();
+        $dummyModel = DummyService::create($inputs);
+
+        return new DummyResource($dummyModel);
+    }
+
+    /**
+     * 更新
+     *
+     * @param \NamespacedDummyRequest $request
+     * @param int                     $id
+     *
+     * @return \App\Http\Resources\AdminApi\EmptyResource
+     */
+    public function update(DummyRequest $request, int $id)
+    {
+        $inputs     = $request->validated();
+        $dummyModel = DummyModel::where('id', $id)->firstOrFail();
+
+        DummyService::update($dummyModel, $inputs);
+
+        return new EmptyResource();
+    }
+
+    /**
+     * 删除
+     *
+     * @param int  $id
+     *
+     * @return \App\Http\Resources\AdminApi\EmptyResource
+     */
+    public function destroy($id)
+    {
+        $dummyModel = DummyModel::findOrFail($id);
+        DummyService::delete($dummyModel);
+
+        return new EmptyResource();
+    }
+}
