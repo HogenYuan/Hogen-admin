@@ -2,15 +2,13 @@
 
 namespace App\Admin\Resources;
 
-use App\Http\Resources\AdminApi\BaseResource;
-use Vendor\Http\Resources\ApiResource;
 
 /**
  * Class OSSFileResource
  *
  * @package App\Admin\Resources
  */
-class OSSFileResource extends ApiResource
+class OSSFileResource extends BaseResource
 {
     public static function properties(): array
     {

@@ -2,7 +2,7 @@
 
 namespace DummyNamespace;
 
-use App\Http\Resources\DummyPrefixBaseResource;
+use App\Admin\Http\Resources\DummyPrefixBaseResource;
 
 /**
  * Class DummyClass

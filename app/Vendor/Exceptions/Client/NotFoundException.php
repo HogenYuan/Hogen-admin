@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Exceptions\Client;
+namespace Vendor\Exceptions\Client;
 
-use App\Exceptions\BaseException;
+use Vendor\Exceptions\BaseException;
 
 /**
  * Class NotFoundException

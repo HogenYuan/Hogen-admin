@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace DummyNamespace;
 
 use NamespacedDummyModel;
-use App\Services\BaseService;
+use App\Admin\Services\BaseService;
 use Carbon\Carbon;
-use Urland\Exceptions\Client\BadRequestException;
+use Vendor\Exceptions\Client\BadRequestException;
 
 /**
  * Class DummyClass

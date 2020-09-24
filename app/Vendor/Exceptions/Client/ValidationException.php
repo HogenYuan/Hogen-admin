@@ -1,9 +1,9 @@
 <?php
 
 
-namespace App\Exceptions\Client;
+namespace Vendor\Exceptions\Client;
 
-use App\Exceptions\BaseException;
+use Vendor\Exceptions\BaseException;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Validator as ValidatorFacade;
 

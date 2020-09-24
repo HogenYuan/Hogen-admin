@@ -2,9 +2,9 @@
 
 namespace DummyNamespace;
 
-use App\Models\Model;
+use App\Admin\Models\Model;
 use Illuminate\Database\Eloquent\Builder;
-use App\Models\Traits\Filter;
+use App\Admin\Models\Traits\Filter;
 
 /**
  * Class DummyClass

@@ -6,8 +6,8 @@ use NamespacedDummyModel;
 use NamespacedDummyRequest;
 use NamespacedDummyResource;
 use NamespacedDummyService;
-use App\Http\Resources\AdminApi\EmptyResource;
-use App\Http\Controllers\DummyPrefixBaseController;
+use App\Admin\Http\Resources\EmptyResource;
+use App\Admin\Http\Controllers\DummyPrefixBaseController;
 
 /**
  * 方法
@@ -53,7 +53,6 @@ class DummyClass extends BaseController
      * @param \NamespacedDummyRequest $request
      *
      * @return \NamespacedDummyResource
-     * @throws \Urland\Exceptions\Client\BadRequestException
      */
     public function store(DummyRequest $request)
     {

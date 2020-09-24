@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Exceptions\Server;
+namespace Vendor\Exceptions\Server;
 
-use App\Exceptions\BaseException;
+use Vendor\Exceptions\BaseException;
 
 /**
  * Class ServiceUnavailableException
