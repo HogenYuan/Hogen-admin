@@ -1,8 +1,6 @@
 ## 感谢
 
-- [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
-
-- [laravel-admin](https://github.com/z-song/laravel-admin)
+基于 https://github.com/largezhou/admin 项目，修改为自己使用的方式
 
 ## 简介
 
