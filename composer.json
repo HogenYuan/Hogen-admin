@@ -11,6 +11,7 @@
         "php": "^7.2.5",
         "fideloper/proxy": "^4.2",
         "guzzlehttp/guzzle": "^6.3",
+        "hogen/laravel-generator": "dev-hogen",
         "laravel/framework": "^7.25.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
@@ -51,7 +52,7 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/",
-            "Vendor\\": "app/Vendor/"
+            "Hogen\\": "packages/hogen/"
         }
     },
     "minimum-stability": "dev",

@@ -25,7 +25,6 @@ class AdminServiceProvider extends ServiceProvider
 
     protected $commands = [
         Console\Commands\AdminInitCommand::class,
-        Console\Commands\Generator\MakeResource::class,
         Console\Commands\CacheConfig::class,
     ];
 

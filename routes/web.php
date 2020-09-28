@@ -19,4 +19,4 @@ Route::get('/', function () {
 
     return view('welcome');
 });
-Route::get('test1', [C\ConfigController::class, 'test1']);
+Route::get('test2', [C\ConfigController::class, 'test2']);

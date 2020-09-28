@@ -98,7 +98,7 @@ trait Filter
      * @param string|array $op         操作
      * @param mixed        $value      请求中对应的值
      */
-    protected function applySimpleFilter($filterName, $op, $value)
+    protected function applySimpleFilter(string $filterName, $op, $value)
     {
         if (is_array($op)) {
             $args = array_slice($op, 1);
