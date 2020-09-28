@@ -5,8 +5,6 @@ namespace PHPSTORM_META {
 /**
 * PhpStorm meta file, to provide autocomplete information for PhpStorm
 * Generated on <?= date("Y-m-d H:i:s") ?>.
-*
-* @author Tinpont <tinpont@topode.com>
 */
 
 <?php foreach ($keyMethods as $method): ?>

@@ -7,9 +7,7 @@
     composer require urland/laravel-constant
     php artisan vendor:publish --tag=urland-constant
 ```
-
-### 使用说明
-
+### 配置
 resources/constant/demo.php
 ```php
     return [
@@ -21,7 +19,23 @@ resources/constant/demo.php
         ],
     ];
 ```
-
+config/constant.php
+```php
+    /*
+    |--------------------------------------------------------------------------
+    | 描述文件生成路径
+    |--------------------------------------------------------------------------
+    | PhpStorm会自动加载识别根目录下.phpstorm.meta.php文件或.phpstorm.meta.php目录下
+    | 的所有文件，此处需与ide-helper同时配置。
+    */
+    'meta_filename' => 'constant.php',
+```
+生成缓存和IDE
+```shell 
+    php artisan constant:cache
+    php artisan constant:meta
+```
+### 使用
 1. 获取常量值
 ```php
     $payTypeKey = 'wechat';
@@ -66,4 +80,14 @@ resources/constant/demo.php
             2 => '微信支付',
         ];
     */
+```
+
+5. 命令
+```shell
+## 生成缓存
+php artisan constant:cache 
+## 更新IDE
+php artisan constant:meta  
+## 清除缓存
+php artisan constant:clear
 ```
