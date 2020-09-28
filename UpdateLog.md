@@ -1,5 +1,6 @@
 2020.9.28
 1.laravel-generator改为composer引入
+2.添加laravel-constant常量包
 
 2020.9.24
 1. 移动底层Exception库

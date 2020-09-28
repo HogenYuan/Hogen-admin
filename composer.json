@@ -16,10 +16,12 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "mews/captcha": "^3.1",
-        "overtrue/laravel-lang": "^3.0"
+        "overtrue/laravel-lang": "^3.0",
+        "urland/laravel-constant": "^2.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.7",
+        "beyondcode/laravel-dump-server": "^1.5",
         "facade/ignition": "^2.0",
         "fzaninotto/faker": "^1.9.1",
         "laravel/telescope": "^3.5",
@@ -57,6 +59,16 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        },
+        {
+            "type": "composer",
+            "url": "https://satis.muniu.urland.cn"
+        }
+    ],
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
