@@ -4,6 +4,8 @@ namespace App\Admin\Services;
 
 abstract class BaseService
 {
+    public $error = null;
+
     /**
      * 更新冗余数据
      *
@@ -36,5 +38,10 @@ abstract class BaseService
         }
 
         return $updateCount;
+    }
+
+    public function getError()
+    {
+        return $this->error;
     }
 }
